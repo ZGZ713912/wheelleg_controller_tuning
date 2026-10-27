@@ -1,0 +1,42 @@
+# 默认控制器参数配置
+
+# Balance LQR 增益
+balance_lqr:
+  gain_theta: -17.6        # Pitch 角度增益 (Nm/rad)
+  gain_thetadot: -3.6      # Pitch 角速度增益 (Nm/(rad/s))
+  gain_v: -3.0             # 速度增益 (Nm/(m/s))
+  gain_x: 0.0              # 位置增益 (Nm/m) - 通常禁用
+  torque_limit: 4.88       # 轮力矩限幅 (Nm)
+
+# Yaw LQR 增益
+yaw_lqr:
+  gain_psi: -10.8          # Yaw 角度增益 (Nm/rad)
+  gain_psidot: -4.3        # Yaw 角速度增益 (Nm/(rad/s))
+  torque_diff_limit: 8.0   # 差速力矩限幅 (Nm)
+
+# 外环速度控制
+outer_loop:
+  kv: 0.0                  # 速度增益 (待从代码提取)
+  kx: 0.0                  # 位置增益 (待从代码提取)
+  command_accel_limit: 2.0  # 加速度限制 (m/s²)
+  command_jerk_limit: 5.0   # Jerk 限制 (m/s³)
+
+# 腿姿态规划
+leg_posture:
+  nominal_leg_length: 0.305  # 标称腿长 (m)
+  leg_motion_coupling: 0.0   # 腿长-速度耦合系数
+
+# Roll 控制（当前禁用）
+roll_control:
+  kp: 0.0                   # Roll 比例增益
+  kd: 0.0                   # Roll 微分增益
+  roll_bias_ff: 1.06        # 前馈系数
+
+# 启动参数
+startup:
+  settle_time: 0.0          # 启动稳定时间 (s)
+
+# 轨迹过渡
+trajectory_transition:
+  pitch_transition_time: 0.15      # Pitch 过渡时间 (s)
+  shank_knee_transition_time: 1.5  # 腿姿态过渡时间 (s)
